@@ -6,6 +6,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import {AngularFireModule} from "angularfire2";
+import {Camera} from "@ionic-native/camera";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDwIolzn10oBd1t3CnVG8fsGMMmgyhbBGE",
+  authDomain: "sample-project-5dde9.firebaseapp.com",
+  databaseURL: "https://sample-project-5dde9.firebaseio.com",
+  projectId: "sample-project-5dde9",
+  storageBucket: "sample-project-5dde9.appspot.com",
+  messagingSenderId: "872919832415"
+};
 
 @NgModule({
   declarations: [
@@ -14,6 +25,7 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -24,7 +36,8 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Camera
   ]
 })
 export class AppModule {}
