@@ -8,14 +8,16 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {AngularFireModule} from "angularfire2";
 import {Camera} from "@ionic-native/camera";
+import { StorageProvider } from '../providers/storage/storage';
+import {AngularFireStorageModule} from "angularfire2/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDwIolzn10oBd1t3CnVG8fsGMMmgyhbBGE",
-  authDomain: "sample-project-5dde9.firebaseapp.com",
-  databaseURL: "https://sample-project-5dde9.firebaseio.com",
-  projectId: "sample-project-5dde9",
-  storageBucket: "sample-project-5dde9.appspot.com",
-  messagingSenderId: "872919832415"
+  apiKey: "xx",
+  authDomain: "xx",
+  databaseURL: "xx",
+  projectId: "xx",
+  storageBucket: "xx",
+  messagingSenderId: "xx"
 };
 
 @NgModule({
@@ -26,6 +28,7 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireStorageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -37,7 +40,8 @@ const firebaseConfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Camera
+    Camera,
+    StorageProvider
   ]
 })
 export class AppModule {}
