@@ -35,6 +35,11 @@ In order to get the app running you need to set up a Firebase instance and then 
 - Go to 'Project Overview', then 'Add Firebase to your Webapp'
 - Copy the configuration properties
 - Open the file  /src/appapp.module.ts in this project and replace the firebaseConfig variable with your own config.
+
+###Firebase Storage Setup
+- Go into your Firebase console again and go to 'Storage'
+- Enable storage, and set your rules so that all users can publicly read and write storage.
+Obviously, this is for demo purposes only and real rules are needed in a production environment.
  
 ###Disable CORs in Firebase Storage
 - Install gsutil. This comes with the firebase SDK.
