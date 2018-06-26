@@ -1,8 +1,6 @@
 # ionic-firebase-storage-sample
 Sample app to demonstrate firebase storage integration
 
-ionic serve -p 32111
-
 ###Overview
 This app will use your device's camera and save it to Firebase storage. The libraries used in this app are:
 - Ionic 3 with the Cordova camera plugin
@@ -37,7 +35,7 @@ In order to get the app running you need to set up a Firebase instance and then 
 - Open the file  /src/appapp.module.ts in this project and replace the firebaseConfig variable with your own config.
  
 ###Running this app
-Run this co,mand:
+Run this command:
 ```
 ionic cordova run browser
 ```
