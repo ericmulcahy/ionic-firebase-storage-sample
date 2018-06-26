@@ -23,6 +23,8 @@ good resources out there to learn the basics.
 ###Setup
 - Make sure nodeJs is installed.
 - Clone this repository
+- Make sure ionic and and cordova are installed (npm install -g ionic cordova)
+- You will also need the firebase SDK installed so you can configure CORS for your storage bucket (npm install --save firebase)
 - Run 'npm install' in the directory where you cloned the repository
 
 ###Firebase Setup
@@ -36,14 +38,14 @@ In order to get the app running you need to set up a Firebase instance and then 
  
 ###Disable CORs in Firebase Storage
 - Install gsutil. This comes with the firebase SDK.
-- Fill in the firebase bucket property from your firebase config. 
+- Fill in the firebase bucket URL from your firebase config 'storageBucket' property. 
 - Run this command from the /resoureces/firebase directory:
 ```
 gsutil cors set storage-no-cors.json gs://BUCKET_URL_HERE
 ```  
 
 ###Running this app
-Run this command:
+Run this command from the project directory:
 ```
 ionic cordova run browser
 ```
