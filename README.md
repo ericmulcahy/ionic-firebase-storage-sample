@@ -34,6 +34,14 @@ In order to get the app running you need to set up a Firebase instance and then 
 - Copy the configuration properties
 - Open the file  /src/appapp.module.ts in this project and replace the firebaseConfig variable with your own config.
  
+###Disable CORs in Firebase Storage
+- Install gsutil. This comes with the firebase SDK.
+- Fill in the firebase bucket property from your firebase config. 
+- Run this command from the /resoureces/firebase directory:
+```
+gsutil cors set storage-no-cors.json gs://BUCKET_URL_HERE
+```  
+
 ###Running this app
 Run this command:
 ```

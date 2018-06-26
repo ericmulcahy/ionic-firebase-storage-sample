@@ -10,13 +10,44 @@
   <ion-grid text-center>
     <ion-row>
       <ion-col>
-        <img *ngIf="imageData" [src]="imageData" />
+        <h3>Sample 1: Using the Camera, Upload, Download</h3>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <button type="button" ion-button icon-right (click)="capture()">
-          Take Picture <ion-icon name="camera"></ion-icon>
+        <img *ngIf="imageData" [src]="imageData" /><br>
+        Image from camera
+      </ion-col>
+      <ion-col>
+        <img *ngIf="imageSrcUrl" [src]="imageSrcUrl | async"/><br>
+        Image from web
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button text-wrap type="button" ion-button icon-right (click)="capture()">
+          Take Pic & Upload <ion-icon name="camera"></ion-icon>
+        </button>
+        <button text-wrap type="button" ion-button (click)="loadPicture()">
+          Load Pic From Web
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <!--Good CSS practices are not part of this sample app-->
+    <ion-row style="margin-top: 30px">
+      <ion-col>
+        <h3>Sample 2: Select a file, Upload, Download</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <input type="file" (change)="detectFiles($event)">
+        <button type="button" ion-button (click)="uploadFile()">
+          Upload File
+        </button>
+        <button type="button" ion-button (click)="downloadFile()">
+          Download File
         </button>
       </ion-col>
     </ion-row>
