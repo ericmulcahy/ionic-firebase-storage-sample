@@ -2,13 +2,17 @@
 Sample app to demonstrate firebase storage integration
 
 ### Overview
-This app will use your device's camera and save it to Firebase storage. The libraries used in this app are:
+This app will use your device's camera and save it to Firebase storage. 
+Additionally, you can select a file from your filesystem and upload it.
+The libraries used in this app are:
 - Ionic 3 with the Cordova camera plugin
 - Firebase
 - AngularFire2
 
 This app is designed to run in a browser on a laptop. It could be built for a phone or other device too, 
 but it's just for demonstration purposes and I haven't tested it on other devices.
+
+Also, the app looks really ugly and the layout is horrible.
 
 ### What does this app do?
 This app let's you take a picture with your device's camera. The picture is then stored to Firebase Storage.
