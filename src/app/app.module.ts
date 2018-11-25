@@ -12,14 +12,15 @@ import { StorageProvider } from '../providers/storage/storage';
 import {AngularFireStorageModule} from "angularfire2/storage";
 import {FirestoreObsSamplePage} from "../pages/firestore-obs-sample/firestore-obs-sample";
 import { DatabaseProvider } from '../providers/database/database';
+import {AngularFirestoreModule} from "angularfire2/firestore";
 
 const firebaseConfig = {
-  apiKey: "xx",
-  authDomain: "xx",
-  databaseURL: "xx",
-  projectId: "xx",
-  storageBucket: "xx",
-  messagingSenderId: "xx"
+  apiKey: "xxx",
+  authDomain: "fir-samples-56b90.firebaseapp.com",
+  databaseURL: "https://fir-samples-56b90.firebaseio.com",
+  projectId: "fir-samples-56b90",
+  storageBucket: "fir-samples-56b90.appspot.com",
+  messagingSenderId: "276109523219"
 };
 
 @NgModule({
@@ -31,6 +32,7 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
     AngularFireStorageModule,
     IonicModule.forRoot(MyApp)
   ],

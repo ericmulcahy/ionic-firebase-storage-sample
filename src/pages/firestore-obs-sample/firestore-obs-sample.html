@@ -1,9 +1,3 @@
-<!--
-  Generated template for the FirestoreObsSamplePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -14,5 +8,28 @@
 
 
 <ion-content padding>
+
+  <ion-item>
+    <ion-label>Item text</ion-label>
+    <ion-input [(ngModel)]="newItemText"></ion-input>
+  </ion-item>
+
+  <button ion-button type="button" (click)="saveItem()">Save Item</button>
+
+  <ion-item>
+    <ion-label>Load item id</ion-label>
+    <ion-input [(ngModel)]="loadItemId"></ion-input>
+  </ion-item>
+  <button ion-button type="button" (click)="loadItem()">Load</button>
+
+  <p>Current item id (obs): {{obsItem ? obsItem.id : ''}}</p>
+
+  <ng-container *ngIf="obsItem">
+    <label for="thing">Text</label>
+    <input id="thing" [ngModel]="obsItem.textField">
+    <!--<input id="thing" [ngModel]="(obsItem | async)?.textField">-->
+    <!--<p>{{(obsItem | async)?.textField}}</p>-->
+  </ng-container>
+  <!--<ion-input [(ngModel)]="(obsItem | async)?.textField"></ion-input>-->
 
 </ion-content>
