@@ -10,6 +10,8 @@ import {AngularFireModule} from "angularfire2";
 import {Camera} from "@ionic-native/camera";
 import { StorageProvider } from '../providers/storage/storage';
 import {AngularFireStorageModule} from "angularfire2/storage";
+import {FirestoreObsSamplePage} from "../pages/firestore-obs-sample/firestore-obs-sample";
+import { DatabaseProvider } from '../providers/database/database';
 
 const firebaseConfig = {
   apiKey: "xx",
@@ -23,7 +25,8 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    FirestoreObsSamplePage
   ],
   imports: [
     BrowserModule,
@@ -34,14 +37,16 @@ const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    FirestoreObsSamplePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
-    StorageProvider
+    StorageProvider,
+    DatabaseProvider
   ]
 })
 export class AppModule {}
